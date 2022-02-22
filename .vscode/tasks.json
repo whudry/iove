@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++ Launch",//任务的名字，就是刚才在命令面板中选择的时候所看到的，可以自己设置
+            "command": "D:/BC/c++/MinGW/bin/g++.exe",  // //这里就输入minGW bin目录下g++.exe 路径
+            "args": [  //编译时候的参数
+                "-g", //添加gdb调试选项
+                "${file}",
+                "-o", //指定生成可执行文件的名称
+                "${workspaceFolder}\\.exe\\${fileBasenameNoExtension}.exe",
+                "-std=c++11"  //编译标准c++11
+            ],
+            "options": {
+                "cwd": "D:\\BC\\c++\\MinGW\\bin"  //这里就输入minGW bin目录的绝对路径
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group":{
+                "kind": "build",
+                "isDefault": true //表示快捷键Ctrl+Shift+B可以运行该任务
+            }
+
+        }
+    ]
+}
